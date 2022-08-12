@@ -1,0 +1,92 @@
+class Producto {
+    constructor(nombre, grafica, CPU, ram, almacenamiento, precio) {
+        this.nombre = nombre
+        this.grafica = grafica
+        this.CPU = CPU
+        this.ram = ram
+        this.almacenamiento = almacenamiento
+        this.precio = precio
+    }
+}
+
+let gamaalta = new Producto("gamaalta", "rtx3080", "i9","32gb", "5tb", 40000)
+let gamamedia = new Producto("gamamedia", "rtx2070", "i5","16gb", "2tb", 30000)
+let gamabaja = new Producto("gamabaja", "gtx2040", "i3","8gb", "1tb", 25000)
+
+//----------- array -----------//
+const articulos = [gamaalta, gamabaja, gamamedia]
+const carrito =[]
+
+//--------- funciones --------//
+
+function ingreseNombre() {
+    alert("hola bienvenido a lokiPC")
+    do {
+        nombre = prompt("ingrese su nombre porfavor")    
+    } while (nombre ===" " ||  nombre === null);
+    alert("hola! "+nombre+" presiona f12 para ver nuestros articulos en la consola")
+}
+    
+function Carrito(){
+    let x = true
+    while(x == true){
+        let producto = 0;
+        producto = prompt(`
+            Nuestros productos!!!!!!! Selecciona con el numero
+            1). Pc Gamer
+            ${gamaalta.nombre}, ${gamaalta.grafica},${gamaalta.CPU},${gamaalta.ram},${gamaalta.almacenamiento},${gamaalta.precio}
+            2). Pc Convencional
+            ${gamabaja.nombre}, ${gamabaja.grafica},${gamabaja.CPU},${gamabaja.ram},${gamabaja.almacenamiento},${gamabaja.precio}
+            3). Pc normal
+            ${gamamedia.nombre}, ${gamamedia.grafica},${gamamedia.CPU},${gamamedia.ram},${gamamedia.almacenamiento},${gamamedia.precio}
+            
+            presiona 0 para finalizar tu compra
+        `)
+        if(producto == 0){    
+            x = false;
+        }else if(producto == 1){
+            carrito.push(gamaalta)
+        } else if(producto == 2){
+            carrito.push(gamabaja)
+        }else if(producto == 3){
+            carrito.push(gamamedia)
+        } else {
+            alert("heyy!! volvete serio, seleciona una cosa")
+        }
+    }
+    factura();
+}
+
+function factura(){
+    let totalCompra = 0;
+    let resumen = ''
+    carrito.forEach(element => {
+        totalCompra += element.precio
+        // totalCompra = totalCompra +element.precio
+
+    });
+    //                0                               ,                          1
+//[x,{("gamaalta", "rtx3080", "i9","32gb", "5tb", 30000)}]
+    carrito.forEach((element, i)  => {
+        resumen+= `Computador ${i+1}, costo: $${element.precio}\n `
+    });
+
+    // for(let i= 0; i < carrito.length; i++){
+    //     resumen+= `Computador ${i+1}, costo: ${carrito[i].precio}\n `
+    // }
+    alert(`has comprado ${carrito.length} Computadores\n
+    por un valor de: ${totalCompra}
+    resumen : 
+    -------------------
+    
+    `)
+
+
+}
+
+//-------------- variables ----------------// 
+
+ingreseNombre()
+Carrito()
+
+// mostrarArti()f

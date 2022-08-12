@@ -1,0 +1,278 @@
+/*
+let nombre = "pablo"
+let apellido = "sosa"
+let fechaNacimiento = "16/09/1997"
+
+
+//TIPADO
+//string = cadena de texto alfanumerica
+//number = numeros enteros o con decimales
+//boolean = TRUE - FALSE
+
+
+let numeroA = 15
+let numeroB = 13
+let resultado = numeroA + numeroB
+
+
+// para mostrar mensajes de alerta = alert()
+// para pedir confirmacion del usuario = confirm()
+// let datoIngresado = prompt("ingrese un dato")
+
+/*
+objeto console
+        .log('aqui va el mensaje')
+        .warn('aqui va el mensaje en amarillo.') //signo de advertencia
+        .error('aqui va el mensaje en rojo') //signo de error
+*/
+
+/*
+let miVariable
+letMivariable2 = "algo"
+let edad = 27
+let booleana //true false
+*/
+
+
+// SENTENCIA IF - ELSE 
+
+//debugger
+
+/*let username = prompt("Ingrese su nombre:") 
+/if (username == "Pablo14K") {
+    console.log("Bienvenido", username)
+} else {
+    console.warn("nombre incorrecto.")
+}
+*/
+
+/*let numero1 = prompt("ingrese un numero")
+    console.log(prompt(nuemro1)) //analiza sintacticamente si el valor recibido, es un numero // NaN = not a number
+if(nuemro1) == true {
+    let nue
+}
+
+*/ 
+
+//debugger
+
+
+/*let nombreCompleto = "Pablo"
+
+
+function verNombreCompleto() {
+    console.log("hola", nombreCompleto)
+}
+
+
+function claseFuncion() {
+    let empresa = "coderhouse"
+    console.log("Empresa", empresa)
+    console.log("Persona", nombreCompleto)
+}
+
+
+
+
+// function comprar(){
+//     let paso1 = prompt("que desa llevar?")
+//     let paso2 = Carrito.push(paso1)
+//         while (paso1 ==="" || paso1 === null){
+//             paso1 = alert("debe ingresar un articulo, de lo contrario presione cancelar")
+//         }
+//         while (paso1 != "gamaalta"  && paso1 != "gamamedia"  && paso1 != "gamabaja")
+//         switch (paso1) {
+//             case "gamaalta":
+//                 return gamaalta
+//             case "gamamedia":
+//                 return gamamedia
+//             case "gamabaja":
+//                 return gamabaja
+//         }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function mostrarSaludo() {
+    let nombreCompleto = prompt("Ingrese el nombre de la persona:")
+        console.log("hola", nombreCompleto)
+}
+*/
+//debugger
+
+
+
+
+
+/*function calc() {
+    let num1 = parseInt(prompt("ingrese un numero"))
+        if (num1 == true) {
+            let num2 = parseInt(prompt("ingrese otro numero"))
+        }
+    if (num2 = true) {
+        let resul = num1 + num2
+        alert("resultado", resul)
+    }
+        
+    
+
+}
+
+/*
+
+
+    
+    
+
+
+
+
+
+/* BUCLES
+
+for = repiten un bloque de codigo un numero de veces especifico
+
+
+while y do..while = repiten un bloque de codigo mientras la 
+                condicion evaluada es verdadera
+
+
+
+/* ciclo de iteracion estatico
+
+for (let i = 0; i < 21; i++) {
+    console.log("iteracion Nro.", i)
+}
+
+*/
+
+
+
+/*let queres = confirm("querés comprar cortinas?")
+if(queres){
+    let tela = prompt("qué tela estás buscando: blackout, sunscreen ó ambas?")
+    tela = tela.toLocaleLowerCase()
+    if(tela == "blackout" || "sunscreen" || "ambas"){
+        let cantidad = parseInt(prompt("cuántas cortinas pretende comprar?"))
+        if (cantidad != NaN){
+            for(let i = 0; i < cantidad; i++) {
+                let ancho = parseInt(prompt( "de la"+" "+ (i + 1)+ " " + "ingrese el ancho en cm"))
+                let largo = parseInt(prompt("de la"+" "+ (i + 1)+ " " + "ingrese el largo en cm"))
+                function total(width, long) {
+                    const longitud = width * long 
+                    let precio = longitud * 350
+                    alert("el precio de la" + "" + (i+1) + " " + "es: ARS" +" " + precio)                   
+                }
+                total(ancho, largo)
+            } 
+        }else {
+            alert("debe ingresar un número")
+        }        
+    }
+
+}else{
+    alert("te invitamos a vistar la página")
+}
+
+
+ /*/
+
+
+    
+        
+
+
+
+/*const IVA = 1.21
+
+
+
+
+const gamabaja = new Pcgamer("gtx2040", "i5","4gb", "2tb", 25000)
+
+
+const gamamedia = new Pcgamer("Rtx4090", "i9", "32gb", "5tb", 36000)
+ 
+
+let inicio = alert("loki pc")
+let juego = confirm("¿estas buscando una pc?")
+let juego2 = prompt("ingresa, gamabaja o gamamedia")
+if (juego2 == gamabaja || gamamedia){
+    console.log =
+    
+}else {
+    alert("debe ingresar uno")
+}
+
+
+
+function Pcgamer(grafica, CPU, ram, almacenamiento, precio) {
+    this.grafica = grafica
+    this.CPU = CPU
+    this.ram = ram
+    this.almacenamiento = almacenamiento
+    this.precio = precio
+    this.prcioIva = function(){
+        let preciofinal = this.precio * IVA
+        return "$" + preciofinal
+    }
+}
+
+
+*/
+
+
+
+
+
+//--------- funciones --------//
+
+/*function ingreseNombre() {
+    let entrada = alert("hola bienvenido a lokiPC")
+    let nombre = prompt("ingrese su nombre porfavor")
+    while (nombre ==="" ||  nombre === null) {
+        nombre = prompt("ingrese su nombre porfavor")
+    }
+}
+
+/*function productos() {
+    let producto 
+    do {
+        producto = prompt("esta buscando una pc de gama \n1)Alta \n2)Media \n3)Baja?")
+    } while (producto != 1 && producto != 2 && producto != 3)
+    
+    switch (producto) {
+        case "1":
+            return gamaalta
+        case "2":
+            return gamamedia
+        case "3":
+            return gamabaja
+    }
+}
+
+function cobrar (prodSeleccionado) {
+    if(abonar > prodSeleccionado.precio) {
+        alert("su vuelto es: $"+ (abonar - prodSeleccionado.precio))
+    }else {
+    alert("no tiene saldo suficiente")
+    }
+}*/
+
+//----------- variables ------------//
+
+let prodSeleccionado = productos()
+let abonar = parseInt(prompt("con cuanto va a pagar?"))
+cobrar(prodSeleccionado)
