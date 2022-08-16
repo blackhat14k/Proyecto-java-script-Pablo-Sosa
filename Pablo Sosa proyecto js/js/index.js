@@ -20,6 +20,18 @@ let gamabaja = new Producto("gamabaja", "gtx2040", "i3","8gb", "1tb", 25000)
 const articulos = [gamaalta, gamabaja, gamamedia]
 const Carrito =[]
 
+function boton1(){
+    let botonAgregar = document.querySelector("card.card-body a[id='boton']").addEventListener("click",agregar1)
+}
+function boton2(){
+    let botonAgregar = document.querySelector("card.card-body a[id='boton']").addEventListener("click",agregar2)
+}
+function boton3(){
+    let botonAgregar = document.querySelector("card.card-body a[id='boton']").addEventListener("click",agregar3<)
+}
+
+ 
+
 //--------- funciones --------//
 
 function ingreseNombre() {
@@ -29,35 +41,32 @@ function ingreseNombre() {
     } while (nombre ==="" || nombre === null);
     alert(`hola! ${nombre} a continuacion tendras una lista de nuestros articulos`)
 }
-debugger
-function carrito(){
-    let x = true
-    while(x == true){
-        let producto = 0
-        producto = prompt(`
-            Nuestros productos!!!!!!! Selecciona con el numero
-            1). Pc Gamer
-            ${gamaalta.nombre}, ${gamaalta.grafica},${gamaalta.CPU},${gamaalta.ram},${gamaalta.almacenamiento},${gamaalta.precio}
-            2). Pc Convencional
-            ${gamabaja.nombre}, ${gamabaja.grafica},${gamabaja.CPU},${gamabaja.ram},${gamabaja.almacenamiento},${gamabaja.precio}
-            3). Pc normal
-            ${gamamedia.nombre}, ${gamamedia.grafica},${gamamedia.CPU},${gamamedia.ram},${gamamedia.almacenamiento},${gamamedia.precio}
 
-            Presione 0 para finalizar su compra.
-        `)
-        if(producto == 0){
-            x = false
-        }else if(producto == 1){
-            Carrito.push(gamaalta)
-        }else if(producto == 2){
-            Carrito.push(gamamedia)
-        }else if(producto == 3){
-            Carrito.push(gamabaja)
-        }else{
-            alert("solo puedes ingresar 1, 2 o 3!!! \n De lo contrario preciona 0 para salir")
-        }
-        
-    }
+function agregar1(){
+    let carro = ``
+    Carrito.push(gamaalta)
+    Carrito.forEach((element, i) => {
+        carro += ` \n ${element.nombre}, valor :$${element.precio} \n` 
+    }) 
+    alert(`usted tiene en su carrito una pc de: ${carro}`)
+}
+
+function agregar2(){
+    let carro = ``
+    Carrito.push(gamamedia)
+    Carrito.forEach((element, i) => {
+        carro += ` \n ${element.nombre}, valor :$${element.precio} \n` 
+    }) 
+    alert(`usted tiene en su carrito una pc de: ${carro}`)
+}
+
+function agregar3(){
+    let carro = ``
+    Carrito.push(gamabaja)
+    Carrito.forEach((element, i) => {
+        carro += ` \n ${element.nombre}, valor :$${element.precio} \n` 
+    }) 
+    alert(`usted tiene en su carrito una pc de: ${carro}`)
 }
 
 function factura(){
@@ -81,8 +90,7 @@ function factura(){
 //-------------- variables ----------------// 
 
 // ingreseNombre()
-// carrito()
-// factura()
+
 
   
 
