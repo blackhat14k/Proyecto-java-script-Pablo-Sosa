@@ -19,16 +19,7 @@ let gamabaja = new Producto("gamabaja", "gtx2040", "i3","8gb", "1tb", 25000)
 //----------- array -----------//
 const articulos = [gamaalta, gamabaja, gamamedia]
 const Carrito =[]
-
-function boton1(){
-    let botonAgregar = document.querySelector("card.card-body a[id='boton']").addEventListener("click",agregar1)
-}
-function boton2(){
-    let botonAgregar = document.querySelector("card.card-body a[id='boton']").addEventListener("click",agregar2)
-}
-function boton3(){
-    let botonAgregar = document.querySelector("card.card-body a[id='boton']").addEventListener("click",agregar3<)
-}
+const Nombre = []
 
  
 
@@ -36,10 +27,12 @@ function boton3(){
 
 function ingreseNombre() {
     alert("hola bienvenido a lokiPC")
+    let nombre 
     do {
         nombre = prompt("ingrese su nombre porfavor")
     } while (nombre ==="" || nombre === null);
     alert(`hola! ${nombre} a continuacion tendras una lista de nuestros articulos`)
+    Nombre.push(nombre)
 }
 
 function agregar1(){
@@ -69,7 +62,7 @@ function agregar3(){
     alert(`usted tiene en su carrito una pc de: ${carro}`)
 }
 
-function factura(){
+function factura(nombre){
     let totalComprar = 0
     let resumen = ''
     Carrito.forEach(element => {
@@ -84,7 +77,47 @@ function factura(){
     ${resumen} 
     ------------------------------------------------------------------
     Total a pagar: ${totalComprar}`)
-        
+}
+
+function despejar(){
+    Carrito.splice(length)
+    alert("ha vaciado su carro")
+}
+
+function Quitar(){
+    let carro = ''
+    Carrito.pop()
+    Carrito.forEach((element, i) => {
+        carro += ` \n ${element.nombre}, valor :$${element.precio} \n` 
+    }) 
+    alert(`usted tiene en su carrito una pc de: ${carro}`)
+    
+}
+
+    // --------------- eventos ----------------//
+
+//-------------- agregar/quitar--------------//
+
+function boton1(){
+    let botonAgregar = document.querySelector("computadoras.div button[id='PCgamaA']").addEventListener("click",agregar1)
+}
+function boton2(){
+    let botonAgregar = document.querySelector("computadoras.div button[id='PCgamaB']").addEventListener("click",agregar2)
+}
+function boton3(){
+    let botonAgregar = document.querySelector("computadoras.div button[id='PCgamaC']").addEventListener("click",agregar3)
+}
+
+//--------------- pagar -------------------//
+
+function pagar(){
+    let botonPagar = document.querySelector("pago.btn-group.botoncito button[id='pagar']").addEventListener("click",factura)
+}
+
+// -------------- vaciar carrito --------------//
+
+function vaciar() {
+    let botonVaciar = document.querySelector("pago.btn-group button[id='vaciar']").addEventListener("click",despejar)
 }
 
 //-------------- variables ----------------// 
