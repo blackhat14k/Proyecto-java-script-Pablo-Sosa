@@ -15,7 +15,7 @@ body {
     border: 2px solid black;
     border-radius: 15px;
     width: 305px;
-    height: 600px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

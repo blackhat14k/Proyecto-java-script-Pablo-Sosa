@@ -19,21 +19,17 @@ let gamabaja = new Producto("gamabaja", "gtx2040", "i3","8gb", "1tb", 25000)
 //----------- array -----------//
 const articulos = [gamaalta, gamabaja, gamamedia]
 const Carrito =[]
-const Nombre = []
+const ingreseNombre = () =>{
+    let inputName = document.getElementById("Name").value
+    sessionStorage.setItem('nombre', inputName)
 
+    let inputMail = document.getElementById("Mail").value
+    localStorage.setItem('mail', inputMail)
+}
+let Nombre = sessionStorage.getItem("nombre")
  
 
 //--------- funciones --------//
-
-function ingreseNombre() {
-    alert("hola bienvenido a lokiPC")
-    let nombre 
-    do {
-        nombre = prompt("ingrese su nombre porfavor")
-    } while (nombre ==="" || nombre === null);
-    alert(`hola! ${nombre} a continuacion tendras una lista de nuestros articulos`)
-    Nombre.push(nombre)
-}
 
 function agregar1(){
     let carro = ``
@@ -62,9 +58,10 @@ function agregar3(){
     alert(`usted tiene en su carrito una pc de: ${carro}`)
 }
 
-function factura(nombre){
+function factura(){
     let totalComprar = 0
     let resumen = ''
+    
     Carrito.forEach(element => {
         totalComprar += element.precio
     })
@@ -72,8 +69,8 @@ function factura(nombre){
         resumen += `${element.nombre} ${i+1}, costo: $${element.precio}\n `
     })
     alert(`
-    Excelente ${nombre} has comprado ${Carrito.length} equipos \n
-    Resumen: 
+    Excelente ${Nombre} has comprado ${Carrito.length} equipos \n
+    Resumen:
     ${resumen} 
     ------------------------------------------------------------------
     Total a pagar: ${totalComprar}`)
@@ -111,7 +108,7 @@ function boton3(){
 //--------------- pagar -------------------//
 
 function pagar(){
-    let botonPagar = document.querySelector("pago.btn-group.botoncito button[id='pagar']").addEventListener("click",factura)
+    let botonPagar = document.querySelector("computadoras. button[id='pagar']").addEventListener("click",factura)
 }
 
 // -------------- vaciar carrito --------------//
@@ -122,7 +119,6 @@ function vaciar() {
 
 //-------------- variables ----------------// 
 
-// ingreseNombre()
 
 
   
@@ -132,3 +128,19 @@ function vaciar() {
     
 
 
+
+
+
+
+
+
+
+// function ingreseNombre() {
+//     alert("hola bienvenido a lokiPC")
+//     let nombre 
+//     do {
+//         nombre = prompt("ingrese su nombre porfavor")
+//     } while (nombre ==="" || nombre === null);
+//     alert(`hola! ${nombre} a continuacion tendras una lista de nuestros articulos`)
+//     sessionStorage.setItem('saludo', nombre)
+// }
