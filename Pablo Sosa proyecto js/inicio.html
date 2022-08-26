@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- estilos -->
     <link href="ejS/estilosJS.css" rel="stylesheet" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!--link rel="stylesheet" href="estilosJS.css"-->
     <script src="js/index.js"></script>
     <title>lokiPC</title>
 </head>
 <body>
-    <header>
-        <h1> LokiPC</h1>
+    <header class="header" id="arriba">
+        <img src="./eJS/lokilogo.png">
     </header>
-    <section class="armados">
-        <h2 class="titulos"> Armados </h2>
+    <section class="cards">
         <div class="computadoras">
             <div>
                 <img src="./eJS/pc1.png">
@@ -29,7 +27,10 @@
                     <li>Gabinete Perseo CN21 + 3 Fanes RGB con controladora</li>
                 </ul>
                 <p>valor 40000</p>
-                <button type="button" id="PCgamaA" class="alta" onclick="agregar1()"> agregar </button>
+                <div>
+                    <button type="button" id="PCgamaA" class="baja" onclick="agregar1()"> agregar </button>
+                    <button type="button" id="Sacar" class="botonQuitar" onclick="Quitar()"> Quitar </button>   
+                </div>
             </div>
             <div>
                 <img src="./eJS/pc2.png">
@@ -45,7 +46,11 @@
                     <li>Gabinete Fantech CG76 + 4 Fanes RGB</li>
                 </ul>
                 <p>valor 30000</p>
-                <button type="button" id="PCgamaA" class="media" onclick="agregar2()"> agregar </button>
+                <div>
+                    <button type="button" id="PCgamaA" class="baja" onclick="agregar2()"> agregar </button>
+                    <button type="button" id="Sacar" class="botonQuitar" onclick="Quitar()"> Quitar </button>        
+                </div>
+                
             </div>
             <div>
                 <img src="./eJS/pc3.png">
@@ -60,7 +65,10 @@
                     <li>Gabinete Deepcool Matrexx 30 + 2 Fanes</li>
                 </ul>
                 <p>valor 25000</p>
-                <button type="button" id="PCgamaA" class="baja" onclick="agregar3()"> agregar </button>
+                <div>
+                    <button type="button" id="PCgamaA" class="baja" onclick="agregar3()"> agregar </button>
+                    <button type="button" id="Sacar" class="botonQuitar" onclick="Quitar()"> Quitar </button>
+                </div>
             </div>
             <button type="button" id="pagar" class="efectivo" onclick="factura()">pagar</button>
         </div>

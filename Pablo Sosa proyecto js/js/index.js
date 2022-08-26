@@ -19,15 +19,15 @@ let gamabaja = new Producto("gamabaja", "gtx2040", "i3","8gb", "1tb", 25000)
 //----------- array -----------//
 const articulos = [gamaalta, gamabaja, gamamedia]
 const Carrito =[]
+
+//----------- login -----------//
+
 const ingreseNombre = () =>{
     let inputName = document.getElementById("Name").value
     sessionStorage.setItem('nombre', inputName)
-
-    let inputMail = document.getElementById("Mail").value
-    localStorage.setItem('mail', inputMail)
 }
 let Nombre = sessionStorage.getItem("nombre")
- 
+
 
 //--------- funciones --------//
 
@@ -35,9 +35,9 @@ function agregar1(){
     let carro = ``
     Carrito.push(gamaalta)
     Carrito.forEach((element, i) => {
-        carro += ` \n ${element.nombre}, valor :$${element.precio} \n` 
-    }) 
-    alert(`usted tiene en su carrito una pc de: ${carro}`)
+        carro += ` \n ${element.nombre}, valor :$${element.precio} \n`
+    })
+    localStorage.setItem("pc", JSON.stringify(Carrito))
 }
 
 function agregar2(){
@@ -45,29 +45,39 @@ function agregar2(){
     Carrito.push(gamamedia)
     Carrito.forEach((element, i) => {
         carro += ` \n ${element.nombre}, valor :$${element.precio} \n` 
-    }) 
-    alert(`usted tiene en su carrito una pc de: ${carro}`)
+    })
+    localStorage.setItem("pc", JSON.stringify(Carrito))
 }
+
 
 function agregar3(){
     let carro = ``
     Carrito.push(gamabaja)
     Carrito.forEach((element, i) => {
         carro += ` \n ${element.nombre}, valor :$${element.precio} \n` 
-    }) 
-    alert(`usted tiene en su carrito una pc de: ${carro}`)
+    })
+    localStorage.setItem("pc", JSON.stringify(Carrito))
+    
 }
 
 function factura(){
     let totalComprar = 0
     let resumen = ''
-    
+        if(resumen == ''){
+            let deposito = JSON.parse(localStorage.getItem("pc"))
+            deposito.forEach(deposito =>{
+                Carrito.push(deposito)
+            })
+    }
     Carrito.forEach(element => {
         totalComprar += element.precio
     })
     Carrito.forEach((element, i)  => {
         resumen += `${element.nombre} ${i+1}, costo: $${element.precio}\n `
     })
+
+    
+
     alert(`
     Excelente ${Nombre} has comprado ${Carrito.length} equipos \n
     Resumen:
@@ -75,6 +85,9 @@ function factura(){
     ------------------------------------------------------------------
     Total a pagar: ${totalComprar}`)
 }
+    
+    
+
 
 function despejar(){
     Carrito.splice(length)
@@ -84,10 +97,11 @@ function despejar(){
 function Quitar(){
     let carro = ''
     Carrito.pop()
+    localStorage.setItem("pc", JSON.stringify(Carrito))
     Carrito.forEach((element, i) => {
         carro += ` \n ${element.nombre}, valor :$${element.precio} \n` 
     }) 
-    alert(`usted tiene en su carrito una pc de: ${carro}`)
+    
     
 }
 
@@ -96,15 +110,17 @@ function Quitar(){
 //-------------- agregar/quitar--------------//
 
 function boton1(){
-    let botonAgregar = document.querySelector("computadoras.div button[id='PCgamaA']").addEventListener("click",agregar1)
+    let botonAgregar = document.querySelector("computadoras.div.div button[id='PCgamaA']").addEventListener("click",agregar1)
 }
 function boton2(){
-    let botonAgregar = document.querySelector("computadoras.div button[id='PCgamaB']").addEventListener("click",agregar2)
+    let botonAgregar = document.querySelector("computadoras.div.div button[id='PCgamaB']").addEventListener("click",agregar2)
 }
 function boton3(){
-    let botonAgregar = document.querySelector("computadoras.div button[id='PCgamaC']").addEventListener("click",agregar3)
+    let botonAgregar = document.querySelector("computadoras.div.div button[id='PCgamaC']").addEventListener("click",agregar3)
 }
-
+function quitar(){
+    let botonQuitar = document.querySelector("computadoras.div.div button[id='Sacar']").addEventListener("click", Quitar)
+}
 //--------------- pagar -------------------//
 
 function pagar(){
@@ -113,15 +129,10 @@ function pagar(){
 
 // -------------- vaciar carrito --------------//
 
-function vaciar() {
-    let botonVaciar = document.querySelector("pago.btn-group button[id='vaciar']").addEventListener("click",despejar)
-}
+// function vaciar() {
+//     let botonVaciar = document.querySelector("pago.btn-group button[id='vaciar']").addEventListener("click",despejar)
+// }
 
-//-------------- variables ----------------// 
-
-
-
-  
 
 
 
