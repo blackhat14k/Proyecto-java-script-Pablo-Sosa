@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- estilos -->
     <link href="ejS/estilosJS.css" rel="stylesheet" type="text/css">
-    <script src="js/index.js"></script>
+    
     <title>lokiPC</title>
 </head>
 <body>
@@ -28,8 +28,7 @@
                 </ul>
                 <p>valor 40000</p>
                 <div>
-                    <button type="button" id="PCgamaA" class="baja" onclick="agregar1()"> agregar </button>
-                    <button type="button" id="Sacar" class="botonQuitar" onclick="Quitar()"> Quitar </button>   
+                    <button type="button" id="PCgamaA" class="btnAgregar"> agregar </button>   
                 </div>
             </div>
             <div>
@@ -47,8 +46,7 @@
                 </ul>
                 <p>valor 30000</p>
                 <div>
-                    <button type="button" id="PCgamaA" class="baja" onclick="agregar2()"> agregar </button>
-                    <button type="button" id="Sacar" class="botonQuitar" onclick="Quitar()"> Quitar </button>        
+                    <button type="button" id="PCgamaB" class="btnAgregar"> agregar </button>        
                 </div>
                 
             </div>
@@ -66,12 +64,16 @@
                 </ul>
                 <p>valor 25000</p>
                 <div>
-                    <button type="button" id="PCgamaA" class="baja" onclick="agregar3()"> agregar </button>
-                    <button type="button" id="Sacar" class="botonQuitar" onclick="Quitar()"> Quitar </button>
+                    <button type="button" id="PCgamaC" class="btnAgregar"> agregar </button>
                 </div>
             </div>
-            <button type="button" id="pagar" class="efectivo" onclick="factura()">pagar</button>
+            <h1>factura</h1>    
+                <button type="button" id="pagar" class="efectivo" onclick="factura()">pagar</button>
+                <div class="factura">
+                    
+                </div>
         </div>
     </section>
+    <script src="js/index.js"></script>
 </body>
 </html>

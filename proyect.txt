@@ -1,0 +1,211 @@
+//---------- objeto ----------//
+
+class Producto {
+    constructor(nombre, grafica, CPU, ram, almacenamiento, precio) {
+        this.nombre = nombre
+        this.grafica = grafica
+        this.CPU = CPU
+        this.ram = ram
+        this.almacenamiento = almacenamiento
+        this.precio = precio
+    }
+}
+
+
+const gamaalta = new Producto("gamaalta", "rtx3080", "i9","32gb", "5tb", 40000)
+const gamamedia = new Producto("gamamedia", "rtx2070", "i5","16gb", "2tb", 30000)
+const gamabaja = new Producto("gamabaja", "gtx2040", "i3","8gb", "1tb", 25000)
+let botonAgregar = document.getElementById("PCgamaA").addEventListener("click",() => agregar(gamaalta))
+let botonAgregar2 = document.getElementById("PCgamaB").addEventListener("click",() => agregar(gamamedia))
+let botonAgregar3= document.getElementById("PCgamaC").addEventListener("click",() => agregar(gamabaja))
+
+
+
+
+//----------- array -----------//
+const articulos = [gamaalta, gamabaja, gamamedia]
+let Carrito =[]
+Carrito = JSON.parse(localStorage.getItem('pc'))
+preFactura();
+
+//----------- login -----------//
+
+const ingreseNombre = () =>{
+    let inputName = document.getElementById("Name").value
+    sessionStorage.setItem('nombre', inputName)
+}
+let Nombre = sessionStorage.getItem("nombre")
+
+
+//--------- funciones --------//
+
+function agregar(pc){
+    Carrito.push(pc)
+    localStorage.setItem("pc", JSON.stringify(Carrito))
+    preFactura();
+}
+
+function preFactura(){
+    let texto = '';
+    Carrito.forEach((element, i) => {
+        texto += `<div class="contenedorDetalleFactura"><span>${element.nombre}</span><span>${element.precio}$</span><button value="${i}" class="delete">X</button></div>`
+    })
+    console.log(texto);
+    document.querySelector(".factura").innerHTML = texto;
+    let arr = document.querySelectorAll('.delete');
+    arr.forEach(elem => {
+        elem.addEventListener("click",(event)=>Quitar(event),true);
+    })
+}
+
+function factura(){
+    let totalComprar = 0;
+    let resumen = '';
+    Carrito.forEach((element, i)  => {
+        resumen += `${element.nombre} ${i+1}, costo: $${element.precio}\n `
+        totalComprar += element.precio
+    })
+
+    alert(`
+    Excelente ${Nombre} has comprado ${Carrito.length} equipos \n
+    Resumen:
+    ${resumen} 
+    ------------------------------------------------------------------
+    Total a pagar: ${totalComprar}`)
+}
+
+function despejar(){
+    Carrito = [];
+    alert("ha vaciado su carro")
+}
+
+function Quitar(event){
+
+    Carrito.splice(event.target.value,1); 
+    localStorage.setItem("pc", JSON.stringify(Carrito))
+    preFactura();    
+}
+
+    // --------------- eventos ----------------//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- estilos -->
+    <link href="ejS/estilosJS.css" rel="stylesheet" type="text/css">
+    
+    <title>lokiPC</title>
+</head>
+<body>
+    <header class="header" id="arriba">
+        <img src="./eJS/lokilogo.png">
+    </header>
+    <section class="cards">
+        <div class="computadoras">
+            <div>
+                <img src="./eJS/pc1.png">
+                <ul>Especificaciones:
+                    <li>Intel Core i5 10400</li>
+                    <li>Asrock B560M Pro4</li>
+                    <li>2x8GB DDR4 2666Mhz Kingston Fury Beast RGB</li>
+                    <li>SSD 240GB M.2 WD Green</li>
+                    <li>HDD 1TB WD BLUE</li>
+                    <li>Fuente 600W 80+ Bronce EVGA</li>
+                    <li>Gabinete Perseo CN21 + 3 Fanes RGB con controladora</li>
+                </ul>
+                <p>valor 40000</p>
+                <div>
+                    <button type="button" id="PCgamaA" class="baja btnAgregar"> agregar </button>
+                    <button type="button" id="Sacar" class="botonQuitar" onclick="Quitar()"> Quitar </button>   
+                </div>
+            </div>
+            <div>
+                <img src="./eJS/pc2.png">
+                <ul>Especificaciones:
+                    <li>Intel Core i5 12600K</li>
+                    <li>MSI Z690-A</li>
+                    <li>16GB DDR5 5200Mhz KINGSTON Fury Beast</li>
+                    <li>GTX 1050Ti Zotac</li>
+                    <li>SSD 1TB M.2 NVME PCIe 4.0 KINGSTON KC3000</li>
+                    <li>WD BLUE 1TB</li>
+                    <li>Cooler Thermaltake Toughair 110</li>
+                    <li>EVGA 500W 80+</li>
+                    <li>Gabinete Fantech CG76 + 4 Fanes RGB</li>
+                </ul>
+                <p>valor 30000</p>
+                <div>
+                    <button type="button" id="PCgamaB" class="baja btnAgregar"> agregar </button>
+                    <button type="button" id="Sacar" class="botonQuitar" onclick="Quitar()"> Quitar </button>        
+                </div>
+                
+            </div>
+            <div>
+                <img src="./eJS/pc3.png">
+                <ul>Especificaciones:
+                    <li>Intel Core i3 6100</li>
+                    <li>Asrock H110M-HDV</li>
+                    <li>8GB DDR4 2666Mhz</li>
+                    <li>GTX 1060 6GB MSI iGamer</li>
+                    <li>HDD 1TB</li>
+                    <li>Fuente Cougar 500W 80+</li>
+                    <li>Cooler Thermaltake UX 100 RGB</li>
+                    <li>Gabinete Deepcool Matrexx 30 + 2 Fanes</li>
+                </ul>
+                <p>valor 25000</p>
+                <div>
+                    <button type="button" id="PCgamaC" class="baja btnAgregar"> agregar </button>
+                    <button type="button" id="Sacar" class="botonQuitar" onclick="Quitar()"> Quitar </button>
+                </div>
+            </div>
+        </div>
+        <h1>factura</h1>
+        <button type="button" id="pagar" class="efectivo" onclick="factura()">pagar</button>
+        <div class="factura">
+            
+        </div>
+    </section>
+    <script src="js/index.js"></script>
+</body>
+</html>
