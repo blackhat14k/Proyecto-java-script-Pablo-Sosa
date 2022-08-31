@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- estilos -->
     <link href="ejS/estilosJS.css" rel="stylesheet" type="text/css">
-    
     <title>lokiPC</title>
 </head>
 <body>
@@ -18,45 +17,45 @@
             <div>
                 <img src="./eJS/pc1.png">
                 <ul>Especificaciones:
-                    <li>Intel Core i5 10400</li>
+                    <li>Intel Core i9 12600</li>
                     <li>Asrock B560M Pro4</li>
-                    <li>2x8GB DDR4 2666Mhz Kingston Fury Beast RGB</li>
+                    <li>GPU rtx3080</li>
+                    <li>32GB DDR4 3200Mhz Kingston Fury Beast RGB</li>
                     <li>SSD 240GB M.2 WD Green</li>
-                    <li>HDD 1TB WD BLUE</li>
+                    <li>HDD 5TB WD BLUE</li>
                     <li>Fuente 600W 80+ Bronce EVGA</li>
                     <li>Gabinete Perseo CN21 + 3 Fanes RGB con controladora</li>
                 </ul>
                 <p>valor 40000</p>
                 <div>
-                    <button type="button" id="PCgamaA" class="btnAgregar"> agregar </button>   
+                    <button type="button" id="PCgamaA" class="btnAgregar"> agregar </button> 
                 </div>
             </div>
             <div>
                 <img src="./eJS/pc2.png">
                 <ul>Especificaciones:
-                    <li>Intel Core i5 12600K</li>
+                    <li>Intel Core i5 10400K</li>
                     <li>MSI Z690-A</li>
+                    <li>GPU rtx2070</li>
                     <li>16GB DDR5 5200Mhz KINGSTON Fury Beast</li>
-                    <li>GTX 1050Ti Zotac</li>
                     <li>SSD 1TB M.2 NVME PCIe 4.0 KINGSTON KC3000</li>
-                    <li>WD BLUE 1TB</li>
+                    <li>WD BLUE 2TB</li>
                     <li>Cooler Thermaltake Toughair 110</li>
                     <li>EVGA 500W 80+</li>
                     <li>Gabinete Fantech CG76 + 4 Fanes RGB</li>
                 </ul>
                 <p>valor 30000</p>
                 <div>
-                    <button type="button" id="PCgamaB" class="btnAgregar"> agregar </button>        
+                    <button type="button" id="PCgamaB" class="btnAgregar2"> agregar </button>         
                 </div>
-                
             </div>
             <div>
                 <img src="./eJS/pc3.png">
                 <ul>Especificaciones:
                     <li>Intel Core i3 6100</li>
                     <li>Asrock H110M-HDV</li>
+                    <li>GPU gtx 1660s</li>
                     <li>8GB DDR4 2666Mhz</li>
-                    <li>GTX 1060 6GB MSI iGamer</li>
                     <li>HDD 1TB</li>
                     <li>Fuente Cougar 500W 80+</li>
                     <li>Cooler Thermaltake UX 100 RGB</li>
@@ -64,16 +63,20 @@
                 </ul>
                 <p>valor 25000</p>
                 <div>
-                    <button type="button" id="PCgamaC" class="btnAgregar"> agregar </button>
+                    <button type="button" id="PCgamaC" class="btnAgregar3"> agregar </button> 
                 </div>
             </div>
-            <h1>factura</h1>    
+            <h1>Factura</h1>    
                 <button type="button" id="pagar" class="efectivo" onclick="factura()">pagar</button>
-                <div class="factura">
+            <div class="factura">
                     
-                </div>
+            </div>
         </div>
     </section>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/index.js"></script>
+
+    
 </body>
+
 </html>
