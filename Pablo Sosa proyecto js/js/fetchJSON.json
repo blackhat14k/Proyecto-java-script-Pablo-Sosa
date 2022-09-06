@@ -1,0 +1,19 @@
+[
+    {
+        "Nombre": "samsung",
+        "Precio": "8000",
+        "Calidad": "2k"
+    },
+
+    {
+        "Nombre": "microsonic",
+        "Precio": "7500",
+        "Calidad": "fullHD"
+    },
+        
+    {
+        "Nombre": "acer",
+        "Precio": "6000",
+        "Calidad": "HD"
+    }
+]

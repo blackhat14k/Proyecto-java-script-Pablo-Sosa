@@ -68,15 +68,43 @@
             </div>
             <h1>Factura</h1>    
                 <button type="button" id="pagar" class="efectivo" onclick="factura()">pagar</button>
-            <div class="factura">
-                    
-            </div>
+            <div class="factura"></div>
         </div>
     </section>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/index.js"></script>
-
-    
+    <section>
+        <div class="tablaFetch">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Calidad</th>
+                    </tr>
+                </thead>
+                <tbody id="data">
+                </tbody>
+            </table> 
+        </div>
+    </section>
 </body>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/index.js"></script>
+<script>
+        let url ='js/fetchJSON.json'
+        fetch(url)
+            .then(response => response.json())
+            .then(data => mostrarData(data))
+            .catch(error => console.log(error))
+    
+        const mostrarData = (data) => {
+            console.log(data)
+            let body =''
+            for(let i = 0; i<data.length; i++){
+                body += `<tr><td>${data[i].Nombre}</td><td>${data[i].Precio}</td><td>${data[i].Calidad}</td></tr>`
+            }
+            
+            document.getElementById('data').innerHTML = body
+        }
 
+</script>
 </html>
