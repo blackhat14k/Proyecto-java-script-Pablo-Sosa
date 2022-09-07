@@ -1,18 +1,18 @@
 [
     {
-        "Nombre": "samsung",
+        "Fabricante": "samsung",
         "Precio": "8000",
         "Calidad": "2k"
     },
 
     {
-        "Nombre": "microsonic",
+        "Fabricante": "microsonic",
         "Precio": "7500",
         "Calidad": "fullHD"
     },
         
     {
-        "Nombre": "acer",
+        "Fabricante": "acer",
         "Precio": "6000",
         "Calidad": "HD"
     }

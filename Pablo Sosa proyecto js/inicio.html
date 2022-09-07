@@ -76,7 +76,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Nombre</th>
+                        <th>Fabricante</th>
                         <th>Precio</th>
                         <th>Calidad</th>
                     </tr>
@@ -100,7 +100,7 @@
             console.log(data)
             let body =''
             for(let i = 0; i<data.length; i++){
-                body += `<tr><td>${data[i].Nombre}</td><td>${data[i].Precio}</td><td>${data[i].Calidad}</td></tr>`
+                body += `<tr><td>${data[i].Fabricante}</td><td>${data[i].Precio}<td>${data[i].Calidad}</td></tr>`
             }
             
             document.getElementById('data').innerHTML = body

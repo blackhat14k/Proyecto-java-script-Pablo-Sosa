@@ -50,7 +50,7 @@ body {
     list-style: none;
     padding: 1px;
   }
-  .tablaFetch  table tr {
+  .tablaFetch {
     display: flex;
   }
 
@@ -61,27 +61,18 @@ body {
     background-color: rgb(23, 190, 241);
     border: 2px solid black;
     border-radius: 15px;
-    justify-content: center;
     width: 305px;
     height: auto;
-    align-items: center;
-    text-align: center;
     color: rgb(0, 0, 0);
     box-shadow: 10px 10px 21px -4px black;
-    word-wrap: break-word;
     font-size: 120%;
-    font-family: a;
   }
-  .table tr {
-    padding: 3px;
-  }
-
-  .table tr th {
-    padding-left: 15px;
   
+  .table thead tr th {
+    text-align: left;
+    border-bottom-style:solid
   }
-
-
+  
 
 
 

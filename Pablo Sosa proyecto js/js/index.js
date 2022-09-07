@@ -93,15 +93,6 @@ function factura(){
 
 }
 
-// alert(`
-// Excelente ${Nombre} has comprado ${Carrito.length} equipos \n
-// Resumen:
-// ${resumen} 
-// ------------------------------------------------------------------
-// Total a pagar: ${totalComprar}`)
-
-
-
 function despejar(){
     Carrito = []
     alert("ha vaciado su carro")
@@ -113,37 +104,3 @@ function Quitar(event){
     preFactura()
 }
 
-    // --------------- eventos ----------------//
-
-//-------------- agregar/quitar--------------//
-
-
-
-// -------------- vaciar carrito --------------//
-
-// function vaciar() {
-//     let botonVaciar = document.querySelector("pago.btn-group button[id='vaciar']").addEventListener("click",despejar)
-// }
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-// function ingreseNombre() {
-//     alert("hola bienvenido a lokiPC")
-//     let nombre 
-//     do {
-//         nombre = prompt("ingrese su nombre porfavor")
-//     } while (nombre ==="" || nombre === null);
-//     alert(`hola! ${nombre} a continuacion tendras una lista de nuestros articulos`)
-//     sessionStorage.setItem('saludo', nombre)
-// }
