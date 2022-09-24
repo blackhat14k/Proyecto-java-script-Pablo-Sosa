@@ -1,19 +1,19 @@
 [
     {
         "Fabricante": "samsung",
-        "Precio": "8000",
-        "Calidad": "2k"
+        "Valor": "$8000",
+        "Stock": "10"
     },
 
     {
         "Fabricante": "microsonic",
-        "Precio": "7500",
-        "Calidad": "fullHD"
+        "Valor": "$7500",
+        "Stock": "3"
     },
         
     {
         "Fabricante": "acer",
-        "Precio": "6000",
-        "Calidad": "HD"
+        "Valor": "$6000",
+        "Stock": "6"
     }
 ]

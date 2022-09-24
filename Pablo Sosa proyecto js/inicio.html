@@ -12,6 +12,9 @@
     <header class="header" id="arriba">
         <img src="./eJS/lokilogo.png">
     </header>
+
+    <!------------------------- tarjetas ---------------------->
+
     <section class="cards">
         <div class="computadoras">
             <div>
@@ -72,13 +75,15 @@
         </div>
     </section>
     <section>
+        <h3> Monitores </h3>
         <div class="tablaFetch">
+            
             <table class="table">
                 <thead>
                     <tr>
                         <th>Fabricante</th>
-                        <th>Precio</th>
-                        <th>Calidad</th>
+                        <th>Valor</th>
+                        <th>Disponibles en Stock</th>
                     </tr>
                 </thead>
                 <tbody id="data">
@@ -89,18 +94,21 @@
 </body>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/index.js"></script>
+
+    <!------------------------- fetch ---------------------->
+
 <script>
         let url ='js/fetchJSON.json'
-        fetch(url)
-            .then(response => response.json())
-            .then(data => mostrarData(data))
+        fetch(url) 
+            .then(response => response.json()) 
+            .then(data => mostrarData(data)) 
             .catch(error => console.log(error))
     
         const mostrarData = (data) => {
             console.log(data)
             let body =''
             for(let i = 0; i<data.length; i++){
-                body += `<tr><td>${data[i].Fabricante}</td><td>${data[i].Precio}<td>${data[i].Calidad}</td></tr>`
+                body += `<tr><td>${data[i].Fabricante}</td><td>${data[i].Valor}<td>${data[i].Stock}</td></tr>`
             }
             
             document.getElementById('data').innerHTML = body

@@ -1,4 +1,4 @@
-// debugger
+
 //---------- objeto ----------//
 
 class Producto {
@@ -11,6 +11,8 @@ class Producto {
         this.precio = precio
     }
 }
+
+
 
 //----------------- var/const -----------------//
 
@@ -26,35 +28,23 @@ let botonAgregar3 = document.getElementById("PCgamaC").addEventListener('click',
 //----------- array -----------//
 const articulos = [gamaalta, gamabaja, gamamedia]
 let Carrito = JSON.parse(localStorage.getItem('pc'))?JSON.parse(localStorage.getItem('pc')): []
-preFactura()
+preFactura() 
 
-//----------- login -----------//    
-function ingreseNombre(){
-    Swal.fire({
-        title: 'Login Form',
-        html: `<input type="text" id="login" class="swal2-input" placeholder="Username">`,
-        confirmButtonText: 'Sign in',
-        focusConfirm: false,
-        preConfirm: () => {
-          const login = Swal.getPopup().querySelector('#login').value
-          if (!login) {
-            Swal.showValidationMessage(`Please enter login and password`)
-          }
-          return { login: login}
-        }
-      }).then((result) => {
-        Swal.fire(`
-          Login: ${result.value.login}
-        `.trim())
-      })
-}
 
+
+//----------------- login -----------------------//
+
+function recibir(){
+    let newUser = document.getElementById("Name").value
+    localStorage.setItem("usuario nuevo",newUser)
     
+}
 
 
 
 
 //--------- funciones --------//
+
 
 function agregar(pc){
     Carrito.push(pc)
@@ -75,6 +65,8 @@ function preFactura(){
 }
 
 function factura(){
+    let user = (localStorage.getItem('usuario nuevo'))
+    console.log(user)
     let totalComprar = 0
     let resumen = ''
     Carrito.forEach((element, i) => {
@@ -83,20 +75,13 @@ function factura(){
     })
         Swal.fire({
             icon:'success',
-            title:'Excelente! has comprado',
+            title:`Excelente! ${user} has comprado`,
             text: resumen,
-            
-
-        
     
     })    
 
 }
 
-function despejar(){
-    Carrito = []
-    alert("ha vaciado su carro")
-}
 
 function Quitar(event){
     Carrito.splice(event.target.value,1)
